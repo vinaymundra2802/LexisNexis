@@ -2,6 +2,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-
-class RunCucumberTest {
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        plugin = {"pretty", "html:target/cucumber-reports"},
+        features={"classpath:features/"},
+        tags = {"@Sections"}
+)
+public class RunCucumberTest {
 }
